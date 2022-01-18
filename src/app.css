@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-section {
+body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +16,7 @@ section {
     padding: 50px;
 }
 
-.container {
+#root {
     position: relative;
     width: calc(100% - 100px);
     min-height: calc(100vh - 280px);
@@ -31,18 +31,18 @@ section {
 }
 
 @media (max-width: 1200px) {
-    .container {
+    #root {
         position: relative;
         width: calc(100% - 20px);
     }
 }
 
 @media (max-width: 992px) {
-    section {
+    body {
         padding: 50px 10px 10px;
     }
 
-    .container {
+    #root {
         flex-direction: column;
         height: auto;
         padding: 20px;
