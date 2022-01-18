@@ -7,9 +7,8 @@ const Navbar = () => {
         <div className="navbar">
             <NavLink to="/" className="logo">Cloud hub</NavLink>
             <ul>
-                <li><NavLink to="/">Home</NavLink></li>
-                <li><NavLink to="/login">Авторизация</NavLink></li>
-                <li><NavLink to="/signUp">Регистрация</NavLink></li>
+                <li><NavLink to="/login">Войти</NavLink></li>
+                <li><NavLink to="/signUp">Попробовать бесплатно</NavLink></li>
             </ul>
         </div>
     );

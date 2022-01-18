@@ -10,12 +10,10 @@ const WelcomePage = () => {
     return (
         <div className="containerWelcome">
             <div className="content">
-                <h2>Cloud hub</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos debitis dolore dignissimos, 
-                    laborum unde hic doloremque eveniet voluptatem, sint culpa nulla, rem reprehenderit corrupti.
-                    Ullam voluptate alias accusantium quas vitae?
+                <h2>Безопасный и простой доступ к контенту</h2>
+                <p>Вы можете хранить файлы и папки, а также работать над ними вместе с другими пользователями на компьютере или любом мобильном устройстве.
                 </p>
-                <a href="#">Read More</a>
+                <a href="#">Попробовать бесплатно</a>
             </div>
             <div className="imgBx">
                 <img src={airMan} alt="air man"/>
@@ -25,7 +23,7 @@ const WelcomePage = () => {
                 <li><a href="#"><img src={twitterIcon} alt="twitterIcon" /></a></li>
                 <li><a href="#"><img src={instagramIcon} alt="instagramIcon" /></a></li>
             </ul>
-            <p className="copyrightText">&copy; 2022 Atanynbasy. All Right Reserved.</p>
+            <p className="copyrightText">&copy; 2022 Atanynbasy. Все права защищены.</p>
         </div>
     );
 };

@@ -12,19 +12,17 @@ const Login = () => {
                     <div className="square"></div>
                     <div className="square"></div>
                 <div className="form">
-                    
-                    <h2>Login Form</h2>
+                    <h2>Войдите в свою учетную запись</h2>
                     <form>
                         <div className="inputBox">
-                            <input type="text" placeholder="Username" />
+                            <input type="text" placeholder="Адрес электронной почты" />
                         </div>
                         <div className="inputBox">
-                            <input type="password" placeholder="Password" />
+                            <input type="password" placeholder="Пароль" />
                         </div>
                         <div className="inputBox">
-                            <input type="submit" value="Login" />
+                            <input type="submit" value="Войти" />
                         </div>
-                        <p className="forget">Forgot Password ? <a href="#">Click Here</a></p>
                         <p className="forget">Don't have an account ? <a href="#">Sign up</a></p>
                     </form>
                 </div>
