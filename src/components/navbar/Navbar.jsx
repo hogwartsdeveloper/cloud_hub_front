@@ -5,10 +5,9 @@ import './navbar.css';
 const Navbar = () => {
     return (
         <div className="navbar">
-            <a href="#" className="logo">Cloud hub</a>
+            <NavLink to="/" className="logo">Cloud hub</NavLink>
             <ul>
-                <li><a href="#" className="active">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><NavLink to="/">Home</NavLink></li>
                 <li><NavLink to="/login">Авторизация</NavLink></li>
                 <li><NavLink to="/signUp">Регистрация</NavLink></li>
             </ul>

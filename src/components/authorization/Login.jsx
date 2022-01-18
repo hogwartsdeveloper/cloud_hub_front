@@ -4,13 +4,15 @@ import "./login.css";
 const Login = () => {
     return (
         <div className="box">
-            <div className="square"></div>
-            <div className="square"></div>
-            <div className="square"></div>
-            <div className="square"></div>
-            <div className="square"></div>
+            
             <div className="container">
+                    <div className="square"></div>
+                    <div className="square"></div>
+                    <div className="square"></div>
+                    <div className="square"></div>
+                    <div className="square"></div>
                 <div className="form">
+                    
                     <h2>Login Form</h2>
                     <form>
                         <div className="inputBox">

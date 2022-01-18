@@ -1,5 +1,7 @@
 .box {
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .box .square {

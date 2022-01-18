@@ -8,7 +8,7 @@ import instagramIcon from '../asserts/img/instagram.png';
 
 const WelcomePage = () => {
     return (
-        <>
+        <div className="containerWelcome">
             <div className="content">
                 <h2>Cloud hub</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos debitis dolore dignissimos, 
@@ -26,7 +26,7 @@ const WelcomePage = () => {
                 <li><a href="#"><img src={instagramIcon} alt="instagramIcon" /></a></li>
             </ul>
             <p className="copyrightText">&copy; 2022 Atanynbasy. All Right Reserved.</p>
-        </>
+        </div>
     );
 };
 
