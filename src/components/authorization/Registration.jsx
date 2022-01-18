@@ -1,5 +1,6 @@
 import React from "react";
-import "./login.css";
+import { NavLink } from "react-router-dom";
+import "./authorization.css";
 
 const Registration = () => {
     return (
@@ -29,7 +30,7 @@ const Registration = () => {
                         <div className="inputBox">
                             <input type="submit" value="Начать бесплатно" />
                         </div>
-                        <p className="forget">У вас уже есть аккаунт ? <a href="#">Войти</a></p>
+                        <p className="forget">У вас уже есть аккаунт ? <NavLink to="/signIn">Войти</NavLink></p>
                     </form>
                 </div>
             </div>
