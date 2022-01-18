@@ -1,10 +1,10 @@
 import React from "react";
-import Navbar from "./navbar/Navbar";
 import './welcomePage.css';
 import airMan from '../asserts/img/character.png';
 import facebookIcon from '../asserts/img/facebook.png';
 import twitterIcon from '../asserts/img/twitter.png';
 import instagramIcon from '../asserts/img/instagram.png';
+import { NavLink } from "react-router-dom";
 
 const WelcomePage = () => {
     return (
@@ -13,7 +13,7 @@ const WelcomePage = () => {
                 <h2>Безопасный и простой доступ к контенту</h2>
                 <p>Вы можете хранить файлы и папки, а также работать над ними вместе с другими пользователями на компьютере или любом мобильном устройстве.
                 </p>
-                <a href="#">Попробовать бесплатно</a>
+                <NavLink to="/signUp">Попробовать бесплатно</NavLink>
             </div>
             <div className="imgBx">
                 <img src={airMan} alt="air man"/>
