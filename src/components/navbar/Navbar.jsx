@@ -7,7 +7,7 @@ const Navbar = () => {
         <div className="navbar">
             <NavLink to="/" className="logo">Cloud hub</NavLink>
             <ul>
-                <li><NavLink to="/login">Войти</NavLink></li>
+                <li><NavLink to="/signIn">Войти</NavLink></li>
                 <li><NavLink to="/signUp">Попробовать бесплатно</NavLink></li>
             </ul>
         </div>

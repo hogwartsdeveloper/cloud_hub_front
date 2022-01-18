@@ -1,7 +1,7 @@
 import React from "react";
 import "./login.css";
 
-const Login = () => {
+const Registration = () => {
     return (
         <div className="box">
             
@@ -12,18 +12,24 @@ const Login = () => {
                     <div className="square"></div>
                     <div className="square"></div>
                 <div className="form">
-                    <h2>Войдите в свою учетную запись</h2>
+                    <h2>Начать бесплатно</h2>
                     <form>
                         <div className="inputBox">
-                            <input type="text" placeholder="Адрес электронной почты" />
+                            <input type="email" placeholder="Адрес электронной почты" />
+                        </div>
+                        <div className="inputBox">
+                            <input type="email" placeholder="Имя" />
+                        </div>
+                        <div className="inputBox">
+                            <input type="email" placeholder="Фамилия" />
                         </div>
                         <div className="inputBox">
                             <input type="password" placeholder="Пароль" />
                         </div>
                         <div className="inputBox">
-                            <input type="submit" value="Войти" />
+                            <input type="submit" value="Начать бесплатно" />
                         </div>
-                        <p className="forget">У вас нет аккаунта ? <a href="#">Зарегистрироваться</a></p>
+                        <p className="forget">У вас уже есть аккаунт ? <a href="#">Войти</a></p>
                     </form>
                 </div>
             </div>
@@ -31,4 +37,4 @@ const Login = () => {
     )
 };
 
-export default Login;
+export default Registration;

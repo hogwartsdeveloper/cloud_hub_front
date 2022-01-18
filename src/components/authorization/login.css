@@ -137,7 +137,6 @@
 .form .inputBox input[type="submit"] {
     background: #fff;
     color: #8a2435;
-    max-width: 100px;
     cursor: pointer;
     margin-bottom: 20px;
     font-weight: 600;
