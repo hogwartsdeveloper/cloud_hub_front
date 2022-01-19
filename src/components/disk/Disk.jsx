@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { getFiles } from "../../actions/file";
 import "./disk.less";
 import FileList from "./fileList/FileList";
 
 const Disk = () => {
+    const dispatch = useDispatch()
+    const currentDir = useSelector(state => state.files.currentDir)
+
+    useEffect(() => {
+        dispatch(getFiles(currentDir))
+    }, [currentDir, dispatch])
+    
     return (
         <div className="containerDisk">
             <div className="disk">

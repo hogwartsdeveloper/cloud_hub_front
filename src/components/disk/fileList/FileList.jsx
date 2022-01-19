@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import File from "./file/File";
 import "./fileList.less";
 
 const FileList = () => {
@@ -17,6 +18,9 @@ const FileList = () => {
                 <div className="fileList__date">Дата</div>
                 <div className="fileList__size">Размер</div>
             </div>
+            {files.map(file => 
+                <File file={file} />
+            )}
         </div>
     );
 };
