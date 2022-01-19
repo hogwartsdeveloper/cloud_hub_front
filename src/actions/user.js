@@ -31,3 +31,16 @@ export const login = (email, password) => {
         }
     }
 }
+
+export const auth = () => {
+    return async dispatch => {
+        try {
+            const response = await axios.get(`${API_URL}api/auth/auth`,
+                {headers: {Authorization: `Bearer ${localStorage.getItem('tokenchik')}`}})
+            dispatch(setUser(response.data.user))
+            localStorage.setItem('tokenchik', response.data.token)
+        } catch(e) {
+            localStorage.removeItem('tokenchik')
+        }
+    }
+}
