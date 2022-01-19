@@ -1,0 +1,32 @@
+.containerDisk {
+    position: relative;
+    margin: 0 auto;
+    width: calc(100% - 100px);
+    min-height: calc(100vh - 280px);
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    padding: 50px;
+}
+
+.disk {
+
+    &__btns {
+        display: flex;
+    }
+
+    &__create {
+        margin-left: 10px;
+    }
+
+    &__upload-input {
+        display: none;
+    }
+
+    &__upload-label {
+        border: 2px dashed black;
+        padding: 5px 10px;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+}
