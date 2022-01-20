@@ -1,9 +1,10 @@
 .file {
     margin: 10px 0;
-    border-bottom: solid 2px black;
+    border-bottom: 1px solid rgba(138, 36, 53, 0.5);
     display: grid;
     grid-template-columns: 1fr 4fr repeat(4, 1fr);
     align-items: center;
+    transition: .5s;
 
     &__img {
         justify-self: center;
@@ -12,19 +13,23 @@
     &__date {
         grid-column-start: 5;
         justify-self: center;
+        transition: .5s;
     }
 
     &__size {
         grid-column-start: 6;
         justify-self: center;
+        transition: .5s;
     }
 
     &__btn {
         display: none;
+        transition: .5s;
     }
 
     &:hover &__date {
         grid-column-start: 3;
+        transition: .5s;
     }
 
     &:hover &__size {
@@ -34,10 +39,14 @@
     &:hover &__download {
         grid-column-start: 5;
         display: block;
+        width: 100px;
+        justify-self: center;
     }
 
     &:hover &__delete {
         grid-column-start: 6;
         display: block;
+        width: 100px;
+        justify-self: center;
     }
 }

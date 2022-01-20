@@ -74,9 +74,12 @@ const Disk = () => {
             </div>
         </div>
         :
-        <div className="drop-area" onDrop={dropHandler} onDragEnter={dragEnterHandler} onDragLeave={dragLeaveHandler} onDragOver={dragEnterHandler}>
-            Перетащите файлы сюда
+        <div className="containerDisk" onDrop={dropHandler} onDragEnter={dragEnterHandler} onDragLeave={dragLeaveHandler} onDragOver={dragEnterHandler}>
+            <div className="drop-area" >
+                Перетащите файлы сюда
+            </div>
         </div>
+        
         
     );
 };
