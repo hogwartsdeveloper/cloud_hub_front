@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { useState } from "react/cjs/react.development";
 import { login } from "../../actions/user";
+import Button from "../UI/button/Button";
 import Input from "../UI/input/Input";
 import "./authorization.css";
 
@@ -30,7 +31,7 @@ const Login = () => {
                             <Input type="password" placeholder="Пароль" value={password} setValue={setPassword} />
                         </div>
                         <div className="inputBox">
-                            <input type="submit" value="Войти" onClick={() => dispatch(login(email, password))}/>
+                            <Button onClick={() => dispatch(login(email, password))}>Войти</Button>
                         </div>
                         <p className="forget">У вас нет аккаунта ? <NavLink to="/signUp">Зарегистрироваться</NavLink></p>
                     </div>

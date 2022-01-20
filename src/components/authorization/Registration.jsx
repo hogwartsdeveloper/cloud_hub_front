@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { registration } from "../../actions/user";
+import Button from "../UI/button/Button";
 import Input from "../UI/input/Input";
 import "./authorization.css";
 
@@ -35,7 +36,7 @@ const Registration = () => {
                             <Input type="password" placeholder="Пароль" value={password} setValue={setPassword} />
                         </div>
                         <div className="inputBox">
-                            <input type="submit" value="Начать бесплатно" onClick={() => registration(firstName, lastName, email, password)}/>
+                            <Button onClick={() => registration(firstName, lastName, email, password)}>Начать бесплатно</Button>
                         </div>
                         <p className="forget">У вас уже есть аккаунт ? <NavLink to="/signIn">Войти</NavLink></p>
                     </div>
