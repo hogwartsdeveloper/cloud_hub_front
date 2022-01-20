@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { getFiles, uploadFile } from "../../actions/file";
-import { setPopupDisplay } from "../../reducers/fileReducer";
+import { setCurrentDir, setPopupDisplay } from "../../reducers/fileReducer";
 import "./disk.less";
 import FileList from "./fileList/FileList";
 import Popup from "./Popup";
@@ -11,6 +11,7 @@ const Disk = () => {
     const dispatch = useDispatch()
     const currentDir = useSelector(state => state.files.currentDir)
     const [dragEnter, setDragEnter] = useState(false)
+    const dirStack = useSelector(state => state.files.dirStack)
 
     useEffect(() => {
         dispatch(getFiles(currentDir))
@@ -18,6 +19,11 @@ const Disk = () => {
     
     function showPopupHandler() {
         dispatch(setPopupDisplay('flex'))
+    }
+
+    function backClickHandler() {
+        const backDirId = dirStack.pop()
+        dispatch(setCurrentDir(backDirId))
     }
 
     function fileUploadHandler(event) {
@@ -49,7 +55,7 @@ const Disk = () => {
         <div className="containerDisk" onDragEnter={dragEnterHandler} onDragLeave={dragLeaveHandler} onDragOver={dragEnterHandler}>
             <div className="disk">
                 <div className="disk__btns">
-                    <button className="disk__back">Назад</button>
+                    <button className="disk__back" onClick={() => backClickHandler()}>Назад</button>
                     <button className="disk__create" onClick={() => showPopupHandler()}>Создать папку</button>
                     <div className="disk__upload">
                         <label htmlFor="disk__upload-input" className="disk__upload-label">Загрузить файл</label>
