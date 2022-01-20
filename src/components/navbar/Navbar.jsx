@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { getFiles, searchFile } from "../../actions/file";
 import { logout } from "../../reducers/userReducer";
+import Input from "../UI/input/Input";
 import './navbar.css';
 
 const Navbar = () => {
@@ -13,16 +14,16 @@ const Navbar = () => {
     const [searchTimeout, setSearchTimout] = useState(false)
     const dispatch = useDispatch()
 
-    function searchChangeHandler(e) {
-        setSearchName(e.target.value)
+    function searchChangeHandler(value) {
+        setSearchName(value)
         if (searchTimeout != false) {
             clearTimeout(searchTimeout)
         }
 
-        if (e.target.value != '') {
+        if (value != '') {
             setSearchTimout(setTimeout((value) => {
                 dispatch(searchFile(value))
-            }, 500, e.target.value))
+            }, 500, value))
         } else {
             dispatch(getFiles(currentDir))
         }
@@ -31,7 +32,7 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <NavLink to="/" className="logo">Cloud hub</NavLink>
-            {isAuth && <input type="text" placeholder="Название файла" onChange={(e) => searchChangeHandler(e)} value={searchName}/>}
+            {isAuth && <div className="searchBox"><Input type="text" value={searchName} setValue={searchChangeHandler} placeholder="Название файла"/></div>}
             <ul>
                 {!isAuth && <li><NavLink to="/signIn">Войти</NavLink></li>}
                 {!isAuth && <li><NavLink to="/signUp">Попробовать бесплатно</NavLink></li>}

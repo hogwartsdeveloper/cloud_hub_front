@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { useState } from "react/cjs/react.development";
 import { login } from "../../actions/user";
+import Input from "../UI/input/Input";
 import "./authorization.css";
 
 const Login = () => {
@@ -23,10 +24,10 @@ const Login = () => {
                     <h2>Войдите в свою учетную запись</h2>
                     <div>
                         <div className="inputBox">
-                            <input type="text" placeholder="Адрес электронной почты" value={email} onChange={(event) => setEmail(event.target.value)}/>
+                            <Input type="text" placeholder="Адрес электронной почты" value={email} setValue={setEmail} />
                         </div>
                         <div className="inputBox">
-                            <input type="password" placeholder="Пароль" value={password} onChange={(event) => setPassword(event.target.value)}/>
+                            <Input type="password" placeholder="Пароль" value={password} setValue={setPassword} />
                         </div>
                         <div className="inputBox">
                             <input type="submit" value="Войти" onClick={() => dispatch(login(email, password))}/>

@@ -45,6 +45,11 @@
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
+.searchBox {
+    width: 30vw;
+    min-width: 200px;
+}
+
 @media (max-width: 992px) {
     .navbar {
         flex-direction: column;

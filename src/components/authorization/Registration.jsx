@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { registration } from "../../actions/user";
+import Input from "../UI/input/Input";
 import "./authorization.css";
 
 const Registration = () => {
@@ -22,16 +23,16 @@ const Registration = () => {
                     <h2>Начать бесплатно</h2>
                     <div>
                         <div className="inputBox">
-                            <input type="text" placeholder="Имя" value={firstName} onChange={(event) => setFirstName(event.target.value)}/>
+                            <Input type="text" placeholder="Имя" value={firstName} setValue={setFirstName} />
                         </div>
                         <div className="inputBox">
-                            <input type="text" placeholder="Фамилия" value={lastName} onChange={(event) => setLastName(event.target.value)}/>
+                            <Input type="text" placeholder="Фамилия" value={lastName} setValue={setLastName} />
                         </div>
                         <div className="inputBox">
-                            <input type="email" placeholder="Адрес электронной почты" value={email} onChange={(event) => setEmail(event.target.value)}/>
+                            <Input type="email" placeholder="Адрес электронной почты" value={email} setValue={setEmail} />
                         </div>
                         <div className="inputBox">
-                            <input type="password" placeholder="Пароль" value={password} onChange={(event) => setPassword(event.target.value)}/>
+                            <Input type="password" placeholder="Пароль" value={password} setValue={setPassword} />
                         </div>
                         <div className="inputBox">
                             <input type="submit" value="Начать бесплатно" onClick={() => registration(firstName, lastName, email, password)}/>
