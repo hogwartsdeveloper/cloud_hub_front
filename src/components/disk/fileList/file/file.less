@@ -6,6 +6,10 @@
     align-items: center;
     transition: .5s;
 
+    &:hover {
+        transform: scale(1.02);
+    }
+
     &__img {
         justify-self: center;
     }
@@ -34,6 +38,7 @@
 
     &:hover &__size {
         grid-column-start: 4;
+        transition: .5s;
     }
 
     &:hover &__download {
@@ -41,6 +46,7 @@
         display: block;
         width: 100px;
         justify-self: center;
+        transition: .5s;
     }
 
     &:hover &__delete {
@@ -48,5 +54,6 @@
         display: block;
         width: 100px;
         justify-self: center;
+        transition: .5s;
     }
 }

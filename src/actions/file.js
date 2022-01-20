@@ -43,11 +43,10 @@ export function uploadFile(file, dirId) {
         try {
             const formData = new FormData()
             formData.append('file', file)
-            if(dirId) {
+            if (dirId) {
                 formData.append('parent', dirId)
             }
-
-            const uploadFile = {name: file.name, process: 0, id: Date.now()}
+            const uploadFile = {name: file.name, progress: 0, id: Date.now()}
             dispatch(showUploader())
             dispatch(addUploader(uploadFile))
             const response = await axios.post(`${API_URL}api/files/upload`, formData, {
@@ -55,7 +54,7 @@ export function uploadFile(file, dirId) {
                 onUploadProgress: progressEvent => {
                     const totalLength = progressEvent.lengthComputable ? progressEvent.total : progressEvent.target.getResponseHeader('content-length') || progressEvent.target.getResponseHeader('x-decompressed-content-length');
                     if (totalLength) {
-                        uploadFile.process = Math.round((progressEvent.loaded * 100) / totalLength)
+                        uploadFile.progress = Math.round((progressEvent.loaded * 100) / totalLength)
                         dispatch(changeUploadFile(uploadFile))
                     }
                 }
