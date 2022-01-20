@@ -13,6 +13,7 @@ const Disk = () => {
     const currentDir = useSelector(state => state.files.currentDir)
     const [dragEnter, setDragEnter] = useState(false)
     const dirStack = useSelector(state => state.files.dirStack)
+    const popupDisplay = useSelector(state => state.files.popupDisplay)
 
     useEffect(() => {
         dispatch(getFiles(currentDir))
@@ -53,7 +54,13 @@ const Disk = () => {
     }
 
     return ( !dragEnter ?
-        <div className="containerDisk" onDragEnter={dragEnterHandler} onDragLeave={dragLeaveHandler} onDragOver={dragEnterHandler}>
+        <div 
+            className="containerDisk" 
+            style={popupDisplay == 'flex' ? {position: 'static'} : {position: 'relative'}} 
+            onDragEnter={dragEnterHandler} 
+            onDragLeave={dragLeaveHandler} 
+            onDragOver={dragEnterHandler}
+        >
             <div className="disk">
                 <div className="disk__btns">
                     <button className="disk__back" onClick={() => backClickHandler()}>Назад</button>

@@ -72,6 +72,7 @@ export async function downloadFile(file) {
         link.click()
         link.remove()
     }
+    console.log(file)
 }
 
 export function deleteFile(file) {
@@ -84,6 +85,7 @@ export function deleteFile(file) {
             })
             dispatch(deleteFileAction(file._id))
             alert(response.data.message)
+            console.log(file)
         } catch(e) {
             alert(e.response.data.message)
         }

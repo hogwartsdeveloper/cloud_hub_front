@@ -12,7 +12,6 @@ import "./file.less"
 const File = ({file}) => {
     const dispatch = useDispatch()
     const currentDir = useSelector(state => state.files.currentDir)
-    const fileView = useSelector(state => state.files.view)
 
     function openDirHandler(file) {
         if (file.type === 'dir') {
@@ -37,8 +36,8 @@ const File = ({file}) => {
             <div className="file__name">{file.name}</div>
             <div className="file__date">{file.date.slice(0, 10)}</div>
             <div className="file__size">{sizeFormat(file.size)}</div>
-            {file.type !== 'dir' && <button className="file__btn file__download" onClick={(e) => downloadClickHandler(e)}>Скачать</button>}
-            <button className="file__btn file__delete" onClick={(e) => deleteClickHandler(e)}>Удалить</button>
+            {file.type !== 'dir' && <button className="file__btn file__download" onClick={(event) => downloadClickHandler(event)}>Скачать</button>}
+            <button className="file__btn file__delete" onClick={(event) => deleteClickHandler(event)}>Удалить</button>
         </div>
     );
 };

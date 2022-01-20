@@ -86,8 +86,20 @@
     }
 
     &__header {
+        position: relative;
         display: flex;
-        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        margin: 0 auto;
+    }
+    &__close {
+        position: absolute;
+        right: 0;
+        width: 20px;
+        display: flex;
+        justify-content: center;
     }
 
     input {

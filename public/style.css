@@ -32,7 +32,7 @@ section .color:nth-child(1) {
 }
 
 section .color:nth-child(2) {
-    bottom: -150px;
+    bottom: 0px;
     left: 100px;
     width: 500px;
     height: 500px;
