@@ -1,3 +1,5 @@
+@import "../../utils/colors.less";
+
 .containerDisk {
     position: relative;
     margin: 0 auto;
@@ -34,16 +36,16 @@
     }
 
     &__upload-label {
-        border: 2px dashed #8a2435;
+        border: 2px dashed @font-color;
         padding: 10px 10px;
         cursor: pointer;
         margin-left: 10px;
-        color: #8a2435;
+        color: @font-color;
         transition: .5s;
     }
 
     &__upload-label:hover {
-        border: 2px solid #8a2435;
+        border: 2px solid @font-color;
         transform: scale(1.05);
     }
 }

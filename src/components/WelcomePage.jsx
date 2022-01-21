@@ -1,5 +1,5 @@
 import React from "react";
-import './welcomePage.css';
+import './welcomePage.less';
 import airMan from '../asserts/img/character.png';
 import facebookIcon from '../asserts/img/facebook.png';
 import twitterIcon from '../asserts/img/twitter.png';

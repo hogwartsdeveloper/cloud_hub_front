@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { getFiles, uploadFile } from "../../actions/file";
 import { setCurrentDir, setPopupDisplay } from "../../reducers/fileReducer";
 import Button from "../UI/button/Button";
+import Loader from "../UI/loader/Loader";
 import "./disk.less";
 import FileList from "./fileList/FileList";
 import Popup from "./Popup";
@@ -15,6 +16,7 @@ const Disk = () => {
     const [dragEnter, setDragEnter] = useState(false)
     const dirStack = useSelector(state => state.files.dirStack)
     const popupDisplay = useSelector(state => state.files.popupDisplay)
+    const loader = useSelector(state => state.app.loader)
 
     useEffect(() => {
         dispatch(getFiles(currentDir))
@@ -52,6 +54,12 @@ const Disk = () => {
         let files = [...event.dataTransfer.files]
         files.forEach(file => dispatch(uploadFile(file, currentDir)))
         setDragEnter(false)
+    }
+
+    if (loader) {
+        return (
+            <Loader />
+        )
     }
 
     return ( !dragEnter ?

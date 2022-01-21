@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { getFiles, searchFile } from "../../actions/file";
 import { logout } from "../../reducers/userReducer";
 import Input from "../UI/input/Input";
-import './navbar.css';
+import './navbar.less';
 import avatarLogo from "../../asserts/img/avatar.svg"
 import { API_URL } from "../../config";
 

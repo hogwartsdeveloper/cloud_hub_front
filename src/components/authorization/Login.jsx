@@ -5,7 +5,7 @@ import { useState } from "react/cjs/react.development";
 import { login } from "../../actions/user";
 import Button from "../UI/button/Button";
 import Input from "../UI/input/Input";
-import "./authorization.css";
+import "./authorization.less";
 
 const Login = () => {
     const [email, setEmail] = useState('')

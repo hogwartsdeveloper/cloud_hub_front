@@ -1,3 +1,5 @@
+@import "../utils/colors.less";
+
 .containerWelcome {
     position: relative;
     margin: 0 auto;
@@ -27,20 +29,20 @@
 
 .content h2 {
     font-size: 3em;
-    color: #8a2435;
+    color: @font-color;
     padding-bottom: 10px;
 }
 
 .content p {
     font-size: 1.2em;
-    color: #8a2435;
+    color: @font-color;
 }
 
 .content a {
     display: inline-block;
     padding: 15px 30px;
     background: #fff;
-    color: #8a2435;
+    color: @font-color;
     margin-top: 20px;
     border-radius: 30px;
     font-size: 1.2em;
@@ -102,7 +104,7 @@
     position: absolute;
     bottom: 30px;
     left: 50px;
-    color: #8a2435;
+    color: @font-color;
 }
 
 @media (max-width: 1200px) {
@@ -154,7 +156,7 @@
         bottom: initial;
         left: inherit;
         width: 100%;
-        color: #8a2435;
+        color: @font-color;
         text-align: center;
         margin-top: 20px;
     }
@@ -166,12 +168,12 @@
     }
     .content h2 {
         font-size: 1.5em;
-        color: #8a2435;
+        color: @font-color;
     }
 
     .content p {
         font-size: 1em;
-        color: #8a2435;
+        color: @font-color;
     }
 
     .imgBx img {
