@@ -9,6 +9,8 @@ import Disk from './components/disk/Disk';
 import Navbar from './components/navbar/Navbar';
 import Profile from './components/profile/Profile';
 import WelcomePage from "./components/WelcomePage";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const isAuth = useSelector(state => state.user.isAuth)
@@ -20,6 +22,9 @@ function App() {
 
   return (
     <BrowserRouter>
+      <div>
+          <ToastContainer />
+      </div>
         <Navbar />
         {!isAuth ?
           <Routes>

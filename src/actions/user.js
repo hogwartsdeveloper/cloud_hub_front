@@ -1,6 +1,8 @@
 import axios from "axios";
 import { API_URL } from "../config";
-import { setUser } from "../reducers/userReducer";
+import { errorSignIn, setSignIn, setUser } from "../reducers/userReducer";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const registration = async (firstName, lastName, email, password) => {
     try {
@@ -11,9 +13,11 @@ export const registration = async (firstName, lastName, email, password) => {
             password
         })
 
-        alert(response.data.message)
+        toast.success('Аккаунт успешно создан!', {
+            autoClose: 2000,
+        });        
     } catch(e) {
-        alert(e.response.data.message)
+        toast.error(e.response.data.message)
     }
 }
 
@@ -26,8 +30,12 @@ export const login = (email, password) => {
             })
             dispatch(setUser(response.data.user))
             localStorage.setItem('tokenchik', response.data.token)
+
+            toast.success('Вы успешно вошли в систему!', {
+                autoClose: 2000,
+            });
         } catch(e) {
-            alert(e.response.data.message)
+            toast.error(e.response.data.message)
         }
     }
 }
@@ -54,8 +62,11 @@ export const uploadAvatar = (file) => {
                 {headers: {Authorization: `Bearer ${localStorage.getItem('tokenchik')}`}}
             )
             dispatch(setUser(response.data))
+            toast.success('Аватар успешно загружен!', {
+                autoClose: 2000,
+            });
         } catch(e) {
-            console.log(e)
+            toast.error("Аватар не загружен!")
         }
     }
 }
@@ -67,8 +78,13 @@ export const deleteAvatar = () => {
                 {headers: {Authorization: `Bearer ${localStorage.getItem('tokenchik')}`}}
             )
             dispatch(setUser(response.data))
+            toast.success('Аватар успешно удален!', {
+                autoClose: 2000,
+            });
         } catch(e) {
-            console.log(e)
+            toast.error('Аватар не удален', {
+                autoClose: 2000,
+            });
         }
     }
 }

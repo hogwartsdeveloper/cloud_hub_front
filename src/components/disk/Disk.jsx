@@ -66,7 +66,7 @@ const Disk = () => {
     return ( !dragEnter ?
         <div 
             className="containerDisk" 
-            style={popupDisplay === 'flex' ? {position: 'static'} : {position: 'relative'}} 
+            style={popupDisplay == 'flex' ? {position: 'static'} : {position: 'relative'}} 
             onDragEnter={dragEnterHandler} 
             onDragLeave={dragLeaveHandler} 
             onDragOver={dragEnterHandler}
