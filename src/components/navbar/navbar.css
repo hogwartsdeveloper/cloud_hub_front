@@ -25,6 +25,7 @@
 
 .navbar ul {
     display: flex;
+    align-items: center;
 }
 
 .navbar ul li {
@@ -43,6 +44,20 @@
 .navbar ul li a.active {
     background: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.avatar__link {
+    padding: 10px !important;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.navbar__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
 }
 
 .searchBox {
