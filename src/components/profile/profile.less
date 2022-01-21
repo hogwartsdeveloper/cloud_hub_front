@@ -1,0 +1,143 @@
+@import "../../utils/colors.less";
+
+:root {
+    --progress: 0;
+}
+
+.profile {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    &__imgBox {
+        width: 200px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+    }
+    &__imgBox img {
+        width: 90%;
+        border-radius: 50%;
+    }
+
+    &__imgBtn {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    &__imgBtn button,
+    &__imgBtn label {
+        width: 100px;
+    }
+
+    &__imgBtn input {
+        display: none;
+    }
+
+    &__imgBtn label {
+        display: inline-block;
+        width: 100%;
+        border: none;
+        text-decoration: none;
+        font-weight: 500;
+        color: @font-color;
+        padding: 10px 20px;
+        background: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border: 1px solid #FFF;
+        margin-right: 10px;
+        transition: 0.5s;
+    }
+
+    &__imgBtn label:hover {
+        border: 1px solid rgba(138, 36, 53, 0.5);
+    }
+
+    &__data {
+        color: @font-color;
+    }
+
+    &__data h2 {
+        font-size: 2.5em;
+        margin-bottom: 15px;
+    }
+
+    &__dataDiv {
+        font-size: 1.3em;
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        letter-spacing: 1px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border-radius: 35px;
+        padding: 5px 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+    &__data div:hover {
+        transform: scale(1.1);
+    }
+}
+
+.progress {
+    margin-top: 30px;
+    width: 160px;
+    height: 160px;
+    // background: cornflowerblue !important;
+    position: relative;
+    transition: .5s;
+
+    &__outer {
+        height: 160px;
+        width: 160px;
+        border-radius: 50%;
+        padding: 20px;
+        box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+                    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+    }
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+                    inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+                    -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+                    0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+                    0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+    }
+    #number {
+        font-weight: 600;
+        color: #555;
+    }
+
+    circle {
+        fill: none;
+        stroke: url(#GradientColor);
+        stroke-width: 20px;
+        stroke-dasharray: 472;
+        stroke-dashoffset: 472;
+        animation: anim 2s linear forwards;
+    }
+
+    svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    @keyframes anim {
+        100% {
+            stroke-dashoffset: var(--progress);
+        }
+    }
+}
