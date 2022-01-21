@@ -7,6 +7,7 @@ import Login from './components/authorization/Login';
 import Registration from './components/authorization/Registration';
 import Disk from './components/disk/Disk';
 import Navbar from './components/navbar/Navbar';
+import Profile from './components/profile/Profile';
 import WelcomePage from "./components/WelcomePage";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           :
           <Routes>
             <Route path="/" element={<Disk />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         }
