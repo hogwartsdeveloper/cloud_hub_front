@@ -48,6 +48,27 @@
         border: 2px solid @font-color;
         transform: scale(1.05);
     }
+
+    &__select {
+        margin-left: auto;
+    }
+
+    &__list, &__plate {
+        height: 20px;
+        width: 20px;
+        cursor: pointer;
+        background: no-repeat center center;
+        background-size: contain;
+        margin: 0 10px;
+    }
+
+    &__list {
+        background-image: url('../../asserts/img/list.svg');
+    }
+
+    &__plate {
+        background-image: url('../../asserts/img/plate.svg');
+    }
 }
 
 .drop-area {

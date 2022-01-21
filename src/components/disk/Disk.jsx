@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { getFiles, uploadFile } from "../../actions/file";
-import { setCurrentDir, setPopupDisplay } from "../../reducers/fileReducer";
+import { setCurrentDir, setFileView, setPopupDisplay } from "../../reducers/fileReducer";
 import Button from "../UI/button/Button";
 import Loader from "../UI/loader/Loader";
 import "./disk.less";
@@ -66,7 +66,7 @@ const Disk = () => {
     return ( !dragEnter ?
         <div 
             className="containerDisk" 
-            style={popupDisplay == 'flex' ? {position: 'static'} : {position: 'relative'}} 
+            style={popupDisplay === 'flex' ? {position: 'static'} : {position: 'relative'}} 
             onDragEnter={dragEnterHandler} 
             onDragLeave={dragLeaveHandler} 
             onDragOver={dragEnterHandler}
@@ -94,6 +94,8 @@ const Disk = () => {
                         <option value="type">По типу</option>
                         <option value="date">По дате</option>
                     </select>
+                    <div className="disk__plate" onClick={() => dispatch(setFileView('plate'))} />
+                    <div className="disk__list" onClick={() => dispatch(setFileView('list'))} />
                 </div>
                 <FileList />
                 <Popup />

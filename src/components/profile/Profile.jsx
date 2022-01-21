@@ -24,7 +24,7 @@ const Profile = () => {
         document.documentElement.style.setProperty('--progress', `${472 - 472 * (busy / 100)}`)
         let counter = 0
         setInterval(() => {
-            if(counter == busy) {
+            if(counter === busy) {
                 clearInterval();
             } else {
                 counter += 1;
@@ -35,7 +35,7 @@ const Profile = () => {
 
     useEffect(() => {
         progress()
-    }, [])
+    })
 
     return (
         <div className="containerDisk">
