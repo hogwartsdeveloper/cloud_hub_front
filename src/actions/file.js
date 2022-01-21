@@ -4,13 +4,19 @@ import { addFile, deleteFileAction, setFiles } from "../reducers/fileReducer";
 import { addUploader, changeUploadFile, showUploader } from "../reducers/uploadReducer";
 import { showLoader, hideLoader } from "../reducers/appReducer";
 
-export function getFiles(dirId) {
+export function getFiles(dirId, sort) {
     return async dispatch => {
         try {
             dispatch(showLoader())
             let url = `${API_URL}api/files`
             if (dirId) {
                 url = `${API_URL}api/files?parent=${dirId}`
+            }
+            if (sort) {
+                url = `${API_URL}api/files?sort=${sort}`
+            }
+            if (dirId && sort) {
+                url = `${API_URL}api/files?parent=${dirId}&sort=${sort}`
             }
 
             const response = await axios.get(url, {
