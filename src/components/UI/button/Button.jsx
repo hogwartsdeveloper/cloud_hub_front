@@ -1,8 +1,8 @@
-import "./button.module.less";
+import "./button.less";
 
 const Button = ({children, ...props}) => {
     return (
-        <button {...props}>
+        <button id="btn" {...props}>
             {children}
         </button>
     );
