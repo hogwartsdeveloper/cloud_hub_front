@@ -1,6 +1,9 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { NavLink, Navigate } from "react-router-dom";
 import { registration } from "../../actions/user";
+import { setNoCreateAccount } from "../../reducers/userReducer";
 import Button from "../UI/button/Button";
 import Input from "../UI/input/Input";
 import "./authorization.less";
@@ -10,6 +13,23 @@ const Registration = () => {
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const isCreateAccount = useSelector(state => state.user.isCreateAccount)
+    const dispatch = useDispatch()
+
+    if (isCreateAccount) {
+        return (
+            <Navigate to="/signIn" />
+        )   
+    }
+
+    function registerHandler() {
+        dispatch(registration(firstName, lastName, email, password))
+       
+        setFirstName('')
+        setLastName('')
+        setEmail('')
+        setPassword('')
+    }
 
     return (
         <div className="box">
@@ -33,10 +53,11 @@ const Registration = () => {
                             <Input type="email" placeholder="Адрес электронной почты" value={email} setValue={setEmail} />
                         </div>
                         <div className="inputBox">
-                            <Input type="password" placeholder="Пароль" value={password} setValue={setPassword} />
+                            <Input value={password} setValue={setPassword} type="password" placeholder="Введите пароль"/>
                         </div>
                         <div className="inputBox">
-                            <Button onClick={() => registration(firstName, lastName, email, password)}>Начать бесплатно</Button>
+                            <Button onClick={() => registerHandler()}>Начать бесплатно</Button>
+                        
                         </div>
                         <p className="forget">У вас уже есть аккаунт ? <NavLink to="/signIn">Войти</NavLink></p>
                     </div>

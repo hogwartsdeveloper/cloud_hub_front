@@ -1,12 +1,12 @@
 const SET_USER = "SET_USER"
 const LOGOUT = "LOGOUT"
-const SET_SIGNIN = "SET_SIGNIN"
-const ERROR_SIGNIN = "ERROR_SIGNIN"
+const SET_CREATE_ACCOUNT = "SET_CREATE_ACCOUNT"
+const SET_NO_CREATE_ACCOUNT = "ERROR_CREATE_ACCOUNT"
 
 const defaultState = {
     currentUser: {},
     isAuth: false,
-    isSignIn: false
+    isCreateAccount: false
 }
 
 export default function userReducer(state = defaultState, action) {
@@ -24,15 +24,15 @@ export default function userReducer(state = defaultState, action) {
                 currentUser: {},
                 isAuth: false
             }
-        case SET_SIGNIN:
+        case SET_CREATE_ACCOUNT:
             return {
                 ...state,
-                isSignIn: true
+                isCreateAccount: true
             }
-        case ERROR_SIGNIN:
+        case SET_NO_CREATE_ACCOUNT:
             return {
                 ...state,
-                isSignIn: false
+                isCreateAccount: false
             }
         default:
             return state
@@ -41,5 +41,5 @@ export default function userReducer(state = defaultState, action) {
 
 export const setUser = user => ({type: SET_USER, payload: user})
 export const logout = () => ({type: LOGOUT})
-export const setSignIn = () => ({type: SET_SIGNIN})
-export const errorSignIn = () => ({type: ERROR_SIGNIN})
+export const setCreateAccount = () => ({type: SET_CREATE_ACCOUNT})
+export const setNoCreateAccount = () => ({type: SET_NO_CREATE_ACCOUNT})

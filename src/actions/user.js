@@ -1,25 +1,29 @@
 import axios from "axios";
 import { API_URL } from "../config";
-import { setUser } from "../reducers/userReducer";
+import { errorCreateAccount, setCreateAccount, setNoCreateAccount, setUser } from "../reducers/userReducer";
 import { toast } from 'react-toastify';
 
-export const registration = async (firstName, lastName, email, password) => {
-    try {
-        const response = await axios.post(`${API_URL}api/auth/registration`, {
-            firstName,
-            lastName,
-            email,
-            password
-        })
+export const registration = (firstName, lastName, email, password) => {
+    return async dispatch => {
+        try {
+            const response = await axios.post(`${API_URL}api/auth/registration`, {
+                firstName,
+                lastName,
+                email,
+                password
+            })
 
-        toast.success('Аккаунт успешно создан!', {
-            autoClose: 2000,
-        });        
-    } catch(e) {
-        toast.error(e.response.data.message)
-        e.response.data.errors.errors.map(error => 
-            toast.error(error.msg)    
-        )
+            toast.success('Аккаунт успешно создан!', {
+                autoClose: 2000,
+            });
+            dispatch(setCreateAccount())
+        } catch(e) {
+            toast.error(e.response.data.message)
+            e.response.data.errors.errors.map(error => 
+                toast.error(error.msg)    
+            )
+            dispatch(setNoCreateAccount())
+        }
     }
 }
 

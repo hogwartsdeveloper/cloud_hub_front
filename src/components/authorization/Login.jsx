@@ -1,8 +1,9 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { useEffect, useState } from "react/cjs/react.development";
+import { useState } from "react/cjs/react.development";
 import { login } from "../../actions/user";
+import { setNoCreateAccount } from "../../reducers/userReducer";
 import Button from "../UI/button/Button";
 import Input from "../UI/input/Input";
 import "./authorization.less";
@@ -11,6 +12,11 @@ const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const dispatch = useDispatch()
+    const isCreateAccount = useSelector(state => state.user.isCreateAccount)
+
+    if (isCreateAccount) {
+        dispatch(setNoCreateAccount())
+    }
     return (
         <div className="box">
             
