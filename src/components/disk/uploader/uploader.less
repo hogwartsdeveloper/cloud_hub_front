@@ -1,3 +1,5 @@
+@import "../../../utils/colors.less";
+
 .uploader {
     height: 300px;
     width: 300px;
@@ -10,17 +12,24 @@
     overflow-y: auto;
 
     &__header {
+        position: relative;
         display: flex;
-        justify-content: space-between;
+        align-items: center;
     }
 
     &__title {
-        color: red;
+        color: @font-color;
         font-size: 1.2rem;
+        margin: 0 auto;
     }
 
     &__close {
         padding: 3px;
+        position: absolute;
+        right: 0;
+        width: 20px !important;
+        display: flex !important;
+        justify-content: center !important;
     }
 }
 
@@ -38,13 +47,13 @@
     &__progress-bar {
         height: 1rem;
         border-radius: 8px;
-        background: red;
+        background: #fff;
         display: flex;
         margin: 3px 0;
     }
 
     &__upload-bar {
-        background-color: green;
+        background: linear-gradient(#e91e63, #673ab7);
         border-radius: 8px;
     }
 
@@ -52,5 +61,11 @@
         color: black;
         left: 50%;
         position: absolute;
+    }
+    &__remove {
+        width: 20px !important;
+        display: flex !important;
+        justify-content: center !important;
+        height: 40px
     }
 }

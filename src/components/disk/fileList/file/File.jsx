@@ -6,6 +6,7 @@ import dirLogo from "../../../../asserts/img/dir.png"
 import fileLogo from "../../../../asserts/img/file.svg"
 import { pushToStack, setCurrentDir } from "../../../../reducers/fileReducer";
 import sizeFormat from "../../../../utils/sizeFormat";
+import Button from "../../../UI/button/Button";
 import "./file.less"
 
 
@@ -38,8 +39,8 @@ const File = ({file}) => {
                 <div className="file__name">{file.name}</div>
                 <div className="file__date">{file.date.slice(0, 10)}</div>
                 <div className="file__size">{sizeFormat(file.size)}</div>
-                {file.type !== 'dir' && <button className="file__btn file__download" onClick={(event) => downloadClickHandler(event)}>Скачать</button>}
-                <button className="file__btn file__delete" onClick={(event) => deleteClickHandler(event)}>Удалить</button>
+                {file.type !== 'dir' && <Button className="file__btn file__download" onClick={(event) => downloadClickHandler(event)}>Скачать</Button>}
+                <Button className="file__btn file__delete" onClick={(event) => deleteClickHandler(event)}>Удалить</Button>
             </div>
         );
     }

@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { createDir } from "../../actions/file";
 import { setPopupDisplay } from "../../reducers/fileReducer";
+import Button from "../UI/button/Button";
 import "./disk.less";
 
 
@@ -27,10 +28,10 @@ const Popup = () => {
             <div className="popup__content" onClick={(event => event.stopPropagation())}>
                 <div className="popup__header">
                     <div className="popup__title">Создать новую папку</div>
-                    <button className="popup__close" onClick={() => dispatch(setPopupDisplay('none'))}>X</button>
+                    <Button className="popup__close" onClick={() => dispatch(setPopupDisplay('none'))}>X</Button>
                 </div>
                 <input type="text" placeholder="Введите название папки" value={dirName} onChange={(event) => setDirName(event.target.value)}/>
-                <button className="popup__create" onClick={() => createHandler()}>Создать</button>
+                <Button className="popup__create" onClick={() => createHandler()}>Создать</Button>
             </div>
         </div>
     );

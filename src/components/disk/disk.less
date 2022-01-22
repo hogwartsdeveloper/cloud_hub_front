@@ -18,14 +18,14 @@
         display: flex;
     }
     &__back {
-        width: 100px;
-        padding: 2px 10px;
+        width: 100px !important;
+        padding: 2px 10px !important;
     }
 
     &__create {
         margin-left: 10px;
-        width: 100px;
-        padding: 2px 10px;
+        width: 100px !important;
+        padding: 2px 10px !important;
     }
 
     &__upload {
@@ -52,6 +52,20 @@
 
     &__select {
         margin-left: auto;
+        border: none;
+        background: #fff;
+        color: @font-color;
+        font-weight: 500;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border: 1px solid #FFF;
+        border-radius: 25px;
+        padding: 10px 20px;
+        transition: 0.5s;
+    }
+
+    &__select:hover {
+        border: 1px solid rgba(138, 36, 53, 0.5);
     }
 
     &__list, &__plate {
@@ -73,14 +87,16 @@
 }
 
 .drop-area {
-    width: 100%;
+    width: calc(100% - 100px);
     height: calc(100vh - 50px - 40px);
+    margin: 0 auto;
     padding: 20px;
-    border: dashed black 2px;
+    border: dashed @font-color 2px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 40px;
+    color: @font-color;
 }
 
 .popup {
@@ -117,13 +133,15 @@
 
     &__title {
         margin: 0 auto;
+        color: @font-color;
+        font-size: 1.2em;
     }
     &__close {
         position: absolute;
         right: 0;
-        width: 20px;
-        display: flex;
-        justify-content: center;
+        width: 20px !important;
+        display: flex !important;
+        justify-content: center !important;
     }
 
     input {

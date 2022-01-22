@@ -27,7 +27,7 @@
     }
 
     &__btn {
-        display: none;
+        display: none !important;
         transition: .5s;
     }
 
@@ -43,17 +43,17 @@
 
     &:hover &__download {
         grid-column-start: 5;
-        display: block;
-        width: 100px;
-        justify-self: center;
+        display: block !important;
+        width: 100px !important;
+        justify-self: center !important;
         transition: .5s;
     }
 
     &:hover &__delete {
         grid-column-start: 6;
-        display: block;
-        width: 100px;
-        justify-self: center;
+        display: block !important;
+        width: 100px !important;
+        justify-self: center !important;
         transition: .5s;
     }
 }

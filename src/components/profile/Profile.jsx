@@ -5,6 +5,7 @@ import { deleteAvatar, uploadAvatar } from "../../actions/user";
 import avatarLogo from "../../asserts/img/avatar.svg";
 import { API_URL } from "../../config";
 import sizeFormat from "../../utils/sizeFormat";
+import Button from "../UI/button/Button";
 import "./profile.less";
 
 const Profile = () => {
@@ -46,7 +47,7 @@ const Profile = () => {
                     </div>
                     <div className="profile__imgBtn">
                         <label htmlFor="upload__avatar">Загрузить</label>
-                        <button onClick={() => dispatch(deleteAvatar())}>Удалить</button>
+                        <Button onClick={() => dispatch(deleteAvatar())}>Удалить</Button>
                         <input id="upload__avatar" accept="image/*" onChange={e => changeHandler(e)} type="file" placeholder="Загрузите аватар" />
                     </div>
                 </div>
