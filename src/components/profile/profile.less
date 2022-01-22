@@ -141,3 +141,40 @@
         }
     }
 }
+
+@media (max-width: 600px) {
+    .profile {
+        flex-direction: column;
+
+        &__imgBox {
+            width: 100px;
+        }
+
+        &__imgBtn {
+            width: 65px;
+        }
+        &__imgBtn label {
+            display: flex;
+            justify-content: center;
+            font-size: 13px;
+        }
+
+        &__imgBtn button {
+            display: flex !important;
+            justify-content: center !important;
+            font-size: 13px !important;
+        }
+
+        &__data {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__data h2 {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-top: 10px;
+        }
+    }
+}

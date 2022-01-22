@@ -58,6 +58,38 @@
     }
 }
 
+@media (max-width: 600px) {
+    .file {
+        width: 150px;
+        height: 150px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+        border-bottom: none;
+    
+        &__img {
+            width: 100px;
+            height: 100px;
+        }
+
+        &:hover &__download {
+            width: 68px !important;
+            font-size: 13px !important;
+            display: flex !important;
+            justify-content: center !important;
+        }
+
+        &:hover &__delete {
+            width: 68px !important;
+            font-size: 13px !important;
+            display: flex !important;
+            justify-content: center !important;
+        }
+    }
+}
+
 .file-plate {
     width: 150px;
     height: 150px;

@@ -66,7 +66,7 @@ const Disk = () => {
     return ( !dragEnter ?
         <div 
             className="containerDisk" 
-            style={popupDisplay == 'flex' ? {position: 'static'} : {position: 'relative'}} 
+            style={popupDisplay === 'flex' ? {position: 'static'} : {position: 'relative'}} 
             onDragEnter={dragEnterHandler} 
             onDragLeave={dragLeaveHandler} 
             onDragOver={dragEnterHandler}
@@ -74,7 +74,7 @@ const Disk = () => {
             <div className="disk">
                 <div className="disk__btns">
                     <Button className="disk__back" onClick={() => backClickHandler()}>Назад</Button>
-                    <Button className="disk__create" onClick={() => showPopupHandler()}>Создать папку</Button>
+                    <Button className="disk__create" onClick={() => showPopupHandler()}>Создать</Button>
                     <div className="disk__upload">
                         <label htmlFor="disk__upload-input" className="disk__upload-label">Загрузить файл</label>
                         <input

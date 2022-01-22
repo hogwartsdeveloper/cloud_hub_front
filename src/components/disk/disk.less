@@ -86,6 +86,43 @@
     }
 }
 
+@media (max-width: 600px) {
+    .containerDisk {
+        height: calc(100vh - 350px);
+    }
+    .disk {
+        &__btns {
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px !important;
+        }
+        &__back {
+            width: 60px !important;
+            font-size: 14px !important;
+            margin-bottom: 15px;
+        }
+
+        &__create {
+            width: 70px !important;
+            font-size: 14px !important;
+            margin-bottom: 15px;
+        }
+
+        &__upload-label {
+            padding: 5px 5px;
+            margin-bottom: 15px;
+        }
+        &__select {
+            padding: 5px 5px;
+        }
+
+        &__list, &__plate {
+            display: none;
+        }
+    }
+}
+
 .drop-area {
     width: calc(100% - 100px);
     height: calc(100vh - 50px - 40px);

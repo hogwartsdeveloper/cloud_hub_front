@@ -21,6 +21,23 @@
     }
 }
 
+@media (max-width: 600px) {
+    .fileList {
+        &__date {
+            display: none;
+        }
+
+        &__size {
+            display: none;
+        }
+
+        &__name {
+            grid-column-start: 3;
+            justify-self: center;
+        }
+    }
+}
+
 .filePlate {
     display: flex;
     flex-wrap: wrap;
