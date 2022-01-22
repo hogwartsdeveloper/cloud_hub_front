@@ -3,6 +3,7 @@ import { API_URL } from "../config";
 import { addFile, deleteFileAction, setFiles } from "../reducers/fileReducer";
 import { addUploader, changeUploadFile, showUploader } from "../reducers/uploadReducer";
 import { showLoader, hideLoader } from "../reducers/appReducer";
+import { toast } from 'react-toastify';
 
 export function getFiles(dirId, sort) {
     return async dispatch => {
@@ -24,7 +25,7 @@ export function getFiles(dirId, sort) {
             })
             dispatch(setFiles(response.data))
         } catch(e) {
-            alert(e.response.data.message)
+            toast.error(e.response.data.message)
         } finally {
             dispatch(hideLoader())
         }
@@ -42,8 +43,11 @@ export function createDir(dirId, name) {
                 headers: {Authorization: `Bearer ${localStorage.getItem('tokenchik')}`}
             })
             dispatch(addFile(response.data))
+            toast.success('Папка создано!', {
+                autoClose: 2000,
+            });
         } catch(e) {
-            alert(e.response.data.message)
+            toast.error(e.response.data.message)
         }
     }
 }
@@ -70,8 +74,11 @@ export function uploadFile(file, dirId) {
                 }
             });
             dispatch(addFile(response.data))
+            toast.success('Файл успешно загружен!', {
+                autoClose: 2000,
+            });
         } catch (e) {
-            alert(e.response.data.message)
+            toast.error(e.response.data.message)
         }
     }
 }
@@ -104,10 +111,11 @@ export function deleteFile(file) {
                 }
             })
             dispatch(deleteFileAction(file._id))
-            alert(response.data.message)
-            console.log(file)
+            toast.success(response.data.message, {
+                autoClose: 2000,
+            });
         } catch(e) {
-            alert(e.response.data.message)
+            toast.error(e.response.data.message)
         }
     }
 }
@@ -122,7 +130,7 @@ export function searchFile(search) {
             })
             dispatch(setFiles(response.data))
         } catch(e) {
-            alert(e.response.data.message)
+            toast.error(e.response.data.message)
         }
     }
 }

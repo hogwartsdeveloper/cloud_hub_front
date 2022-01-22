@@ -1,8 +1,7 @@
 import axios from "axios";
 import { API_URL } from "../config";
-import { errorSignIn, setSignIn, setUser } from "../reducers/userReducer";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { setUser } from "../reducers/userReducer";
+import { toast } from 'react-toastify';
 
 export const registration = async (firstName, lastName, email, password) => {
     try {
@@ -18,6 +17,9 @@ export const registration = async (firstName, lastName, email, password) => {
         });        
     } catch(e) {
         toast.error(e.response.data.message)
+        e.response.data.errors.errors.map(error => 
+            toast.error(error.msg)    
+        )
     }
 }
 
@@ -82,7 +84,7 @@ export const deleteAvatar = () => {
                 autoClose: 2000,
             });
         } catch(e) {
-            toast.error('Аватар не удален', {
+            toast.error('Аватар не удален!', {
                 autoClose: 2000,
             });
         }
