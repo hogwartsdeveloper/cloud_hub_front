@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { useState } from "react/cjs/react.development";
 import { login } from "../../actions/user";
 import { setNoCreateAccount } from "../../reducers/userReducer";
 import Button from "../UI/button/Button";
