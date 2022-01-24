@@ -1,6 +1,6 @@
 import React from "react";
 import UploadFile from "./UploadFile";
-import './uploader.less';
+import './uploader.css';
 import { useDispatch, useSelector } from "react-redux";
 import { hideUploader } from "../../../reducers/uploadReducer";
 import Button from "../../UI/button/Button";

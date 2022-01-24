@@ -1,6 +1,6 @@
 import axios from "axios";
 import { API_URL } from "../config";
-import { errorCreateAccount, setCreateAccount, setNoCreateAccount, setUser } from "../reducers/userReducer";
+import { setCreateAccount, setNoCreateAccount, setUser } from "../reducers/userReducer";
 import { toast } from 'react-toastify';
 
 export const registration = (firstName, lastName, email, password) => {

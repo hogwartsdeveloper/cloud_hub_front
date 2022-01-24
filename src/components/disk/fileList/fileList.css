@@ -1,0 +1,43 @@
+.fileList {
+    margin: 20px 0;
+}
+
+.fileList__header {
+    display: grid;
+    grid-template-columns: 1fr 4fr repeat(4, 1fr);
+}
+
+.fileList__name {
+    grid-column-start: 2;
+}
+
+.fileList__date {
+    grid-column-start: 5;
+    justify-self: center;
+}
+
+.fileList__size {
+    grid-column-start: 6;
+    justify-self: center;
+}
+
+@media (max-width: 600px) {
+    .fileList__date {
+        display: none;
+    }
+
+    .fileList__size {
+        display: none;
+    }
+
+    .fileList__name {
+        grid-column-start: 3;
+        justify-self: center;
+    }
+}
+
+.filePlate {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 10px;
+}

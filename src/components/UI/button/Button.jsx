@@ -1,4 +1,4 @@
-import "./button.less";
+import "./button.css";
 
 const Button = ({children, ...props}) => {
     return (

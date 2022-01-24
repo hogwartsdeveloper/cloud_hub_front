@@ -1,0 +1,111 @@
+.file {
+    margin: 10px 0;
+    border-bottom: 1px solid rgba(138, 36, 53, 0.5);
+    display: grid;
+    grid-template-columns: 1fr 4fr repeat(4, 1fr);
+    align-items: center;
+    transition: .5s;
+}
+.file:hover {
+    transform: scale(1.02);
+}
+
+.file__img {
+    justify-self: center;
+}
+
+.file__date {
+    grid-column-start: 5;
+    justify-self: center;
+    transition: .5s;
+}
+
+.file__size {
+    grid-column-start: 6;
+    justify-self: center;
+    transition: .5s;
+}
+
+.file__btn {
+    display: none !important;
+    transition: .5s;
+}
+
+.file:hover .file__date {
+    grid-column-start: 3;
+    transition: .5s;
+}
+
+.file:hover .file__size {
+    grid-column-start: 4;
+    transition: .5s;
+}
+
+.file:hover .file__download {
+    grid-column-start: 5;
+    display: block !important;
+    width: 100px !important;
+    justify-self: center !important;
+    transition: .5s;
+}
+
+.file:hover .file__delete {
+    grid-column-start: 6;
+    display: block !important;
+    width: 100px !important;
+    justify-self: center !important;
+    transition: .5s;
+}
+
+@media (max-width: 600px) {
+    .file {
+        width: 150px;
+        height: 150px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+        border-bottom: none;
+    }
+    .file__img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .file:hover .file__download {
+        width: 68px !important;
+        font-size: 13px !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .file:hover .file__delete {
+        width: 68px !important;
+        font-size: 13px !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+}
+
+.file-plate {
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.file-plate__img {
+    width: 100px;
+    height: 100px;
+}
+
+.file-plate__btns {
+    display: none;
+}
+
+.file-plate:hover .file-plate__btns {
+    display: flex;
+}

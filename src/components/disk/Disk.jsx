@@ -5,7 +5,7 @@ import { getFiles, uploadFile } from "../../actions/file";
 import { setCurrentDir, setFileView, setPopupDisplay } from "../../reducers/fileReducer";
 import Button from "../UI/button/Button";
 import Loader from "../UI/loader/Loader";
-import "./disk.less";
+import "./disk.css";
 import FileList from "./fileList/FileList";
 import Popup from "./Popup";
 import Uploader from "./uploader/Uploader";

@@ -6,7 +6,7 @@ import avatarLogo from "../../asserts/img/avatar.svg";
 import { API_URL } from "../../config";
 import sizeFormat from "../../utils/sizeFormat";
 import Button from "../UI/button/Button";
-import "./profile.less";
+import "./profile.css";
 
 const Profile = () => {
     const dispatch = useDispatch()

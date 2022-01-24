@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { NavLink, Navigate } from "react-router-dom";
 import { registration } from "../../actions/user";
-import { setNoCreateAccount } from "../../reducers/userReducer";
 import Button from "../UI/button/Button";
 import Input from "../UI/input/Input";
-import "./authorization.less";
+import "./authorization.css";
 
 const Registration = () => {
     const [firstName, setFirstName] = useState('')

@@ -6,7 +6,7 @@ import { login } from "../../actions/user";
 import { setNoCreateAccount } from "../../reducers/userReducer";
 import Button from "../UI/button/Button";
 import Input from "../UI/input/Input";
-import "./authorization.less";
+import "./authorization.css";
 
 const Login = () => {
     const [email, setEmail] = useState('')

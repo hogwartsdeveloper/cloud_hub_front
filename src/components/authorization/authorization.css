@@ -1,5 +1,3 @@
-@import "../../utils/colors.less";
-
 .box {
     position: relative;
     display: flex;
@@ -94,7 +92,7 @@
 
 .form h2 {
     position: relative;
-    color: @font-color;
+    color: #8a2435;
     font-size: 24px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -108,7 +106,7 @@
     bottom: -10px;
     width: 80px;
     height: 4px;
-    background: @font-color;
+    background: #8a2435;
 }
 
 .form .inputBox {
@@ -118,7 +116,7 @@
 
 .form .inputBox input[type="submit"] {
     background: #fff;
-    color: @font-color;
+    color: #8a2435;
     cursor: pointer;
     margin-bottom: 20px;
     font-weight: 600;
@@ -126,10 +124,10 @@
 
 .forget {
     margin-top: 5px;
-    color: @font-color;
+    color: #8a2435;
 }
 
 .forget a {
-    color: @font-color;
+    color: #8a2435;
     font-weight: 600;
 }

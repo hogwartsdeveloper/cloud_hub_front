@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { createDir } from "../../actions/file";
 import { setPopupDisplay } from "../../reducers/fileReducer";
 import Button from "../UI/button/Button";
-import "./disk.less";
+import "./disk.css";
 
 
 const Popup = () => {

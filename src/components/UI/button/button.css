@@ -1,12 +1,10 @@
-@import "../../../utils/colors.less";
-
 #btn {
     display: inline-block;
     width: 100%;
     border: none;
     text-decoration: none;
     font-weight: 500;
-    color: @font-color;
+    color: #8a2435;
     padding: 10px 20px;
     background: #fff;
     cursor: pointer;

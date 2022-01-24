@@ -7,7 +7,7 @@ import fileLogo from "../../../../asserts/img/file.svg"
 import { pushToStack, setCurrentDir } from "../../../../reducers/fileReducer";
 import sizeFormat from "../../../../utils/sizeFormat";
 import Button from "../../../UI/button/Button";
-import "./file.less"
+import "./file.css";
 
 
 const File = ({file}) => {
